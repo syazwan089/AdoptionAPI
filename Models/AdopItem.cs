@@ -18,7 +18,7 @@ namespace AdoptionApi.Models
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
         public ICollection<Image> ItemImage { get; set; }
-        public int UserId { get; set; }
+        public int UsersId { get; set; }
 
     }
 }

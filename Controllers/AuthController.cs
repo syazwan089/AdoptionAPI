@@ -27,7 +27,7 @@ namespace AdoptionApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Include("Adoption").ToListAsync();
         }
 
         // GET: api/Auth/5

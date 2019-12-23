@@ -11,5 +11,6 @@ namespace AdoptionApi.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<AdoptionApi.Models.Users> Users { get; set; }
+        public DbSet<AdoptionApi.Models.AdopItem> AdopItem { get; set; }
     }
 }
