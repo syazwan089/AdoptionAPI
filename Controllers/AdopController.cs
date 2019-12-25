@@ -31,6 +31,18 @@ namespace AdoptionApi.Controllers
             return Ok(item);
         }
 
+
+        // GET: by Categpry
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> adop(string type)
+        {
+            IEnumerable<AdopItem> item;
+            item = await _context.AdopItem.OrderBy(x => x.CreatedAt).Where(x => x.Type == type).Include("ItemImage").ToListAsync();
+            return Ok(item);
+        }
+
+
         // GET: api/Adop/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAdopItem(int id)

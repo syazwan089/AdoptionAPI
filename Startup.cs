@@ -30,7 +30,7 @@ namespace AdoptionApi
             services.AddControllers();
 
             services.AddScoped<IAuth, Auth>();
-            services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Adoptions"));
+            services.AddDbContext<DataContext>(x => x.UseSqlServer("Server=tcp:myudemy.database.windows.net,1433;Initial Catalog=adoption;Persist Security Info=False;User ID=syazwan089;Password=Mzwni2013;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddCors();
         }
 
